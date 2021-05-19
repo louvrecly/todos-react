@@ -1,0 +1,24 @@
+@import './scss/main';
+
+.app {
+  margin: 0 30px;
+  padding: 50px 0;
+
+  @media #{$tablets-up} {
+    margin: 0 auto;
+    width: 640px;
+  }
+
+  @media #{$medium-up} {
+    width: 960px;
+  }
+
+  .title {
+    margin: 0 0 15px;
+    @include font-size-normal;
+
+    @media #{$tablets-up} {
+      @include font-size-large;
+    }
+  }
+}

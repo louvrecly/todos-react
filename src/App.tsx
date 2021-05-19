@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import TodoList from './components/TodoList';
 import { fetchTodos } from './services/jsonPlaceholderApi';
 import { Todo } from './constants/types';
-import './App.css';
+import classes from './App.module.scss';
 
 const App: React.FC = () => {
   const [userId, setUserId] = useState<number>(1); // eslint-disable-line
@@ -17,14 +18,10 @@ const App: React.FC = () => {
   }, [userId]);
 
   return (
-    <div className="App">
-      <h1>Todos</h1>
+    <div className={classes.app}>
+      <h1 className={classes.title}>User {userId}'s Todo List</h1>
 
-      <ul>
-        {todos.map(todo => (
-          <li key={todo.id}>{JSON.stringify(todo)}</li>
-        ))}
-      </ul>
+      <TodoList todos={todos}></TodoList>
     </div>
   );
 }
