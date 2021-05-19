@@ -1,0 +1,26 @@
+// Font Sizes
+// ===========================
+@mixin font-size-smaller {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+@mixin font-size-small {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font-size-normal {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@mixin font-size-large {
+  font-size: 30px;
+  line-height: 42px;
+}
+
+@mixin font-size-larger {
+  font-size: 50px;
+  line-height: 64px;
+}
