@@ -1,26 +1,48 @@
 import { Todo } from "../../constants/types";
 
-export function setTodos(todos: Array<Todo>) {
+export function loadTodosSuccess(todos: Array<Todo>) {
   return {
-    type: 'SET_TODOS' as 'SET_TODOS',
+    type: 'LOAD_TODOS_SUCCESS' as 'LOAD_TODOS_SUCCESS',
     todos
   };
 }
 
-export function updateTodo(updatedTodo: Todo) {
+export function createTodoSuccess(newTodo: Todo) {
   return {
-    type: 'UPDATE_TODO' as 'UPDATE_TODO',
+    type: 'CREATE_TODO_SUCCESS' as 'CREATE_TODO_SUCCESS',
+    newTodo
+  };
+}
+
+export function updateTodoSuccess(updatedTodo: Todo) {
+  return {
+    type: 'UPDATE_TODO_SUCCESS' as 'UPDATE_TODO_SUCCESS',
     updatedTodo
   };
 }
 
-export function removeTodo(id: number) {
+export function removeTodoSuccess(id: number) {
   return {
-    type: 'REMOVE_TODO' as 'REMOVE_TODO',
+    type: 'REMOVE_TODO_SUCCESS' as 'REMOVE_TODO_SUCCESS',
     id
   };
 }
 
-type TodosActionCreators = typeof setTodos | typeof updateTodo | typeof removeTodo;
+export function failed(type: FAILED, message: string) {
+  return {
+    type,
+    message
+  };
+}
+
+type FAILED = 'LOAD_TODOS_FAILED' | 'CREATE_TODO_FAILED' | 'UPDATE_TODO_FAILED' | 'REMOVE_TODO_FAILED';
+
+type TodosActionCreators =
+  | typeof loadTodosSuccess
+  | typeof createTodoSuccess
+  | typeof updateTodoSuccess
+  | typeof removeTodoSuccess
+  | typeof failed;
+
 
 export type ITodosAction = ReturnType<TodosActionCreators>;
