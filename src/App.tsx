@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
-import { fetchTodos } from './services/jsonPlaceholderApi';
-import { Todo } from './constants/types';
-import { setTodos } from './redux/todos/actions';
-import classes from './App.module.scss';
+import { loadTodos } from './redux/todos/thunks';
 import { IRootState } from './redux/store';
+import classes from './App.module.scss';
 
 const App: React.FC = () => {
   const [userId, setUserId] = useState<number>(1); // eslint-disable-line
@@ -13,8 +12,7 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   async function initTodos(userId: number) {
-    const { data } = await fetchTodos(userId);
-    dispatch(setTodos(data as Array<Todo>));
+    dispatch(loadTodos(userId));
   }
 
   useEffect(() => {
@@ -25,7 +23,9 @@ const App: React.FC = () => {
     <div className={classes.app}>
       <h1 className={classes.title}>User {userId}'s Todo List</h1>
 
-      <TodoList todos={todos}></TodoList>
+      <NewTodo userId={userId} />
+
+      <TodoList todos={todos} />
     </div>
   );
 }
