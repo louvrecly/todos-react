@@ -7,7 +7,7 @@ const initialState: ITodosState = {
 
 export function todosReducer(state: ITodosState = initialState, action: ITodosAction): ITodosState {
   switch (action.type) {
-    case 'SET_TODOS':
+    case 'LOAD_TODOS_SUCCESS':
       {
         const { todos } = action;
         return {
@@ -15,7 +15,16 @@ export function todosReducer(state: ITodosState = initialState, action: ITodosAc
           todos
         };
       }
-    case 'UPDATE_TODO':
+    case 'CREATE_TODO_SUCCESS':
+      {
+        const { newTodo } = action;
+        const todos = [newTodo, ...state.todos.slice()];
+        return {
+          ...state,
+          todos
+        };
+      }
+    case 'UPDATE_TODO_SUCCESS':
       {
         const { updatedTodo } = action;
         const todos = state.todos.slice();
@@ -24,9 +33,9 @@ export function todosReducer(state: ITodosState = initialState, action: ITodosAc
         return {
           ...state,
           todos
-        }
+        };
       }
-    case 'REMOVE_TODO':
+    case 'REMOVE_TODO_SUCCESS':
       {
         const { id } = action;
         const todos = state.todos.slice();
@@ -35,7 +44,7 @@ export function todosReducer(state: ITodosState = initialState, action: ITodosAc
         return {
           ...state,
           todos
-        }
+        };
       }
     default:
       return state;
