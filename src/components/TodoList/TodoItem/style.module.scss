@@ -17,13 +17,17 @@
     align-items: center;
 
     .checker {
-      margin: 0 15px 0 0;
+      margin: 0 5px 0 0;
       width: 18px;
       height: 18px;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+
+      @media #{$tablets-up} {
+        margin: 0 10px 0 0;
+      }
 
       &:before {
         content: '';
@@ -56,10 +60,14 @@
       font-weight: normal;
       border: none;
       outline: none;
+
+      &.crossed {
+        text-decoration: line-through;
+      }
     }
 
     .button {
-      margin: 0 0 0 10px;
+      margin: 0 0 0 5px;
       padding: 0;
       width: 18px;
       background-color: transparent;
@@ -67,6 +75,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media #{$tablets-up} {
+        margin: 0 0 0 10px;
+      }
+
+      &:hover {
+        opacity: 0.85;
+      }
 
       .icon {
         color: #8d8d8d;
