@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import { Todo } from '../../../constants/types';
-import { removeTodo, updateTodo } from '../../../redux/todos/actions';
+import { removeTodo, updateTodo } from '../../../redux/todos/thunks';
 import classes from './style.module.scss';
 
 interface ITodoItemProps {
@@ -39,10 +39,23 @@ const TodoItem: React.FC<ITodoItemProps> = (props: ITodoItemProps) => {
           classes.checker,
           props.todo.completed && classes.checked
         ])}>
-          <input type="checkbox" className={classes.checkbox} checked={props.todo.completed} onChange={handleInput('completed')} />
+          <input
+            type="checkbox"
+            className={classes.checkbox}
+            checked={props.todo.completed}
+            onChange={handleInput('completed')}
+          />
         </div>
 
-        <input type="text" className={classes.title} value={props.todo.title} onChange={handleInput('title')} />
+        <input
+          type="text"
+          className={clsx([
+            classes.title,
+            props.todo.completed && classes.crossed
+          ])}
+          value={props.todo.title}
+          onChange={handleInput('title')}
+        />
 
         <button className={classes.button} onClick={handleOnClick(props.todo.id as number)}>
           <span className={classes.icon}>×</span>
