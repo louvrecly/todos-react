@@ -6,6 +6,22 @@
   box-shadow: 0 10px 20px 0 rgba($color-grey, 0.15);
   transition: all 0.3s ease;
 
+  &.light {
+    .container {
+      .title {
+        color: $color-light-secondary;
+      }
+    }
+  }
+
+  &.dark {
+    .container {
+      .title {
+        color: $color-dark-secondary;
+      }
+    }
+  }
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -21,10 +37,10 @@
         color: $color-completed;
         border-color: $color-completed;
       }
-    }
 
-    .title {
-      text-decoration: line-through;
+      .title {
+        text-decoration: line-through;
+      }
     }
   }
 
@@ -76,6 +92,7 @@
     .title {
       margin: 0;
       flex: 1;
+      background-color: transparent;
       @include font-size-small;
       font-weight: normal;
       border: none;
