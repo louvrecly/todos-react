@@ -1,8 +1,18 @@
-// Main Theme Colors
+// Global Colors
 // ===========================
 $color-white: #ffffff;
 $color-grey: #8d8d8d;
 $color-black: #000000;
+
+// Light Theme Colors
+// ===========================
+$color-light-primary: transparent;
+$color-light-secondary: #333333;
+
+// Dark Theme Colors
+// ===========================
+$color-dark-primary: #333333;
+$color-dark-secondary: $color-white;
 
 // Item Status Colors
 // ===========================
