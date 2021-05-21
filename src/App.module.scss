@@ -1,44 +1,111 @@
 @import './scss/main';
 
 .app {
-  margin: 0 30px;
-  padding: 50px 0;
+  &.light {
+    background-color: $color-light-primary;
+    color: $color-light-secondary;
 
-  @media #{$tablets-up} {
-    margin: 0 auto;
-    width: 640px;
+    .container {
+      .header {
+        .select {
+          color: $color-light-secondary;
+        }
+      }
+    }
   }
 
-  @media #{$medium-up} {
-    width: 960px;
+  &.dark {
+    background-color: $color-dark-primary;
+    color: $color-dark-secondary;
+
+    .container {
+      .header {
+        .select {
+          color: $color-dark-secondary;
+        }
+      }
+    }
   }
 
-  .header {
-    margin: 0 0 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .container {
+    margin: 0 30px;
+    padding: 50px 0;
 
-    .title {
-      margin: 0;
-      @include font-size-normal;
+    @media #{$tablets-up} {
+      margin: 0 auto;
+      width: 640px;
+    }
 
-      @media #{$tablets-up} {
-        @include font-size-large;
+    @media #{$medium-up} {
+      width: 960px;
+    }
+
+    .header {
+      margin: 0 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        margin: 0;
+        @include font-size-normal;
+
+        @media #{$tablets-up} {
+          @include font-size-large;
+        }
+      }
+
+      .select {
+        padding: 5px;
+        width: 80px;
+        background-color: transparent;
+        border: 1px solid $color-grey;
+        border-radius: 15px;
+        @include font-size-smaller;
+        outline: none;
+        cursor: pointer;
+
+        @media #{$tablets-up} {
+          width: 120px;
+        }
       }
     }
 
-    .select {
-      padding: 5px;
-      width: 80px;
-      border: 1px solid $color-grey;
-      border-radius: 15px;
-      @include font-size-smaller;
-      outline: none;
-      cursor: pointer;
+    .theme-control {
+      display: flex;
+      justify-content: flex-end;
 
-      @media #{$tablets-up} {
-        width: 120px;
+      .button {
+        background-color: $color-grey;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px 0 rgba($color-grey, 0.15);
+        float: right;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.85;
+        }
+
+        &:active {
+          opacity: 1.2;
+        }
+
+        .icon {
+          filter: grayscale(1);
+
+          &.active {
+            filter: unset;
+          }
+
+          &:not(:last-of-type) {
+            margin: 0 5px 0 0;
+          }
+        }
+
+        // .divider {
+        //   margin: 0 5px;
+        // }
       }
     }
   }
