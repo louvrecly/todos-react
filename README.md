@@ -11,6 +11,8 @@ You can clone the project to your local by the following command:
 
 ## Initial Set Up
 
+### Install Required Packages
+
 Navigate to the project folder with the command:
 
 `cd todos-react/`
@@ -30,7 +32,7 @@ After that, run the following command to install all necessary node packages:
 
 You will see a `node_modules` folder and a `yarn.lock` file are created.
 
-## Set Up Environment Variable
+### Set Up Environment Variable
 
 Open the `.env.local.example` from the root directory of the project, you'll see a list of variable to be set up.
 
