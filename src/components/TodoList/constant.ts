@@ -1,4 +1,4 @@
-import { Todo } from "../../constants/types";
+import { Todo } from "../../redux/todos/state";
 
 export type DisplayType = 'all' | 'active' | 'completed';
 

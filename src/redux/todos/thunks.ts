@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { Todo } from "../../constants/types";
+import { Todo } from "./state";
 import { createTodoSuccess, failed, ITodosAction, loadTodosSuccess, removeTodoSuccess, updateTodoSuccess } from "./actions";
 import { fetchTodos, postTodo } from "../../services/jsonPlaceholderApi";
 import checkSuccessfulStatus from "../../utils/checkSuccessfulStatus";

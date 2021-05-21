@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Todo } from '../constants/types';
+import { Todo } from '../redux/todos/state';
 
 const jsonPlaceholderClient = axios.create({
   baseURL: process.env.REACT_APP_JSON_PLACEHOLDER_API

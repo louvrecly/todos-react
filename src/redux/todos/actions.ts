@@ -1,4 +1,4 @@
-import { Todo } from "../../constants/types";
+import { Todo } from "./state";
 
 export function loadTodosSuccess(todos: Array<Todo>) {
   return {

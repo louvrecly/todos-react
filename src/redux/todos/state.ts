@@ -1,5 +1,9 @@
-import { Todo } from "../../constants/types";
-
+export interface Todo {
+  id?: number,
+  userId: number,
+  title: string,
+  completed: boolean
+}
 export interface ITodosState {
   todos: Array<Todo>
 }
