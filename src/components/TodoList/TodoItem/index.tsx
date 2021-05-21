@@ -33,12 +33,12 @@ const TodoItem: React.FC<ITodoItemProps> = (props: ITodoItemProps) => {
   };
 
   return (
-    <li className={classes['todo-item']}>
+    <li className={clsx([
+      classes['todo-item'],
+      props.todo.completed && classes.completed
+    ])}>
       <div className={classes.container}>
-        <div className={clsx([
-          classes.checker,
-          props.todo.completed && classes.checked
-        ])}>
+        <div className={classes.checker}>
           <input
             type="checkbox"
             className={classes.checkbox}
@@ -49,10 +49,7 @@ const TodoItem: React.FC<ITodoItemProps> = (props: ITodoItemProps) => {
 
         <input
           type="text"
-          className={clsx([
-            classes.title,
-            props.todo.completed && classes.crossed
-          ])}
+          className={classes.title}
           value={props.todo.title}
           onChange={handleInput('title')}
         />
