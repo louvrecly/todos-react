@@ -1,5 +1,60 @@
+@import '../../scss/main';
+
 .todo-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .tiles {
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tile {
+      padding: 5px;
+      flex: 1;
+      background-color: $color-grey;
+      color: $color-white;
+      border-radius: 15px;
+      @include font-size-smaller;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.85;
+      }
+
+      &:active {
+        opacity: 1.2;
+      }
+
+      &:not(:last-of-type) {
+        margin: 0 5px 0 0;
+
+        @media #{$tablets-up} {
+          margin: 0 10px 0 0;
+        }
+      }
+
+      &.all {
+        background-color: $color-all;
+      }
+
+      &.active {
+        background-color: $color-active;
+      }
+
+      &.completed {
+        background-color: $color-completed;
+      }
+    }
+  }
+
+  .todos {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 }
