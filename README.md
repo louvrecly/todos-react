@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# Getting Started with Todo List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the repository of the Todo List! This is a web application built with [React](https://reactjs.org/).
+It allows you to create, edit or delete your todo items.
 
-## Available Scripts
+## Cloning the Project
 
-In the project directory, you can run:
+You can clone the project to your local by the following command:
 
-### `yarn start`
+`git clone https://github.com/louvrecly/todos-react.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Initial Set Up
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Navigate to the project folder with the command:
 
-### `yarn test`
+`cd todos-react/`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to start the app locally, you'll need to install `node`, `npm` and `yarn` first.
 
-### `yarn build`
+Install `node` and `npm` altogether from [here](https://www.npmjs.com/get-npm).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install `yarn` using the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm install --global yarn`
 
-### `yarn eject`
+After that, run the following command to install all necessary node packages:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`yarn install`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You will see a `node_modules` folder and a `yarn.lock` file are created.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Set Up Environment Variable
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Open the `.env.local.example` from the root directory of the project, you'll see a list of variable to be set up.
 
-## Learn More
+e.g. `REACT_APP_JSON_PLACEHOLDER_API`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env.local` file in the root directory with the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`touch .env.local`
+
+Open the `.env.local` file and add the following line to set the environment variable. Remember to save the file:
+
+`REACT_APP_JSON_PLACEHOLDER_API=https://jsonplaceholder.typicode.com`
+
+## Start the App Locally
+
+Run the following command in your local terminal to start the app locally.
+
+`yarn start`
+
+After the app is built, it will be hosted at http://localhost:3000/todos-react.
+
+Navigate to http://localhost:3000/todos-react in a browser to view the app.
+
+## Terminate the App Hosting
+
+In your terminal, press `ctrl` + `C` simultaneously to terminate the hosting of the app.
+
+## Play with the Deployed Version on GitHub Pages
+
+A stable version has been deployed to github pages at https://louvrecly.github.io/todos-react/.
+
+Feel free to play with it.
