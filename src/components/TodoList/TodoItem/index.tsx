@@ -1,8 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
-import { Todo } from '../../../constants/types';
+import { Todo } from '../../../redux/todos/state';
 import { removeTodo, updateTodo } from '../../../redux/todos/thunks';
+import { IRootState } from '../../../redux/store';
 import classes from './style.module.scss';
 
 interface ITodoItemProps {
@@ -13,6 +14,7 @@ type FieldKeyType = 'completed' | 'title';
 type TargetKeyType = 'checked' | 'value';
 
 const TodoItem: React.FC<ITodoItemProps> = (props: ITodoItemProps) => {
+  const theme = useSelector((state: IRootState) => state.styles.theme)
   const dispatch = useDispatch();
 
   const eventTargetFieldGetter = {
@@ -35,6 +37,7 @@ const TodoItem: React.FC<ITodoItemProps> = (props: ITodoItemProps) => {
   return (
     <li className={clsx([
       classes['todo-item'],
+      classes[theme],
       props.todo.completed && classes.completed
     ])}>
       <div className={classes.container}>

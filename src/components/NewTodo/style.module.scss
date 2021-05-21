@@ -5,9 +5,22 @@
   display: flex;
   justify-content: space-between;
 
+  &.light {
+    .input {
+      color: $color-light-secondary;
+    }
+  }
+
+  &.dark {
+    .input {
+      color: $color-dark-secondary;
+    }
+  }
+
   .input {
     padding: 5px 5px 5px 20px;
     flex: 1;
+    background-color: transparent;
     border: 1px solid rgba($color-grey, 0.2);
     border-radius: 20px 0 0 20px;
     @include font-size-small;
