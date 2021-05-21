@@ -7,7 +7,9 @@ It allows you to create, edit or delete your todo items.
 
 You can clone the project to your local by the following command:
 
-`git clone https://github.com/louvrecly/todos-react.git`
+```
+git clone https://github.com/louvrecly/todos-react.git
+```
 
 ## Initial Set Up
 
@@ -15,7 +17,9 @@ You can clone the project to your local by the following command:
 
 Navigate to the project folder with the command:
 
-`cd todos-react/`
+```
+cd todos-react/
+```
 
 In order to start the app locally, you'll need to install `node`, `npm` and `yarn` first.
 
@@ -24,11 +28,15 @@ Install `node` and `npm` altogether from [here](https://www.npmjs.com/get-npm).
 
 Install `yarn` using the following command:
 
-`npm install --global yarn`
+```
+npm install --global yarn
+```
 
 After that, run the following command to install all necessary node packages:
 
-`yarn install`
+```
+yarn install
+```
 
 You will see a `node_modules` folder and a `yarn.lock` file are created.
 
@@ -36,21 +44,29 @@ You will see a `node_modules` folder and a `yarn.lock` file are created.
 
 Open the `.env.local.example` from the root directory of the project, you'll see a list of variable to be set up.
 
-e.g. `REACT_APP_JSON_PLACEHOLDER_API`
+```
+e.g. REACT_APP_JSON_PLACEHOLDER_API
+```
 
 Create a `.env.local` file in the root directory with the following command:
 
-`touch .env.local`
+```
+touch .env.local
+```
 
 Open the `.env.local` file and add the following line to set the environment variable. Remember to save the file:
 
-`REACT_APP_JSON_PLACEHOLDER_API=https://jsonplaceholder.typicode.com`
+```
+REACT_APP_JSON_PLACEHOLDER_API=https://jsonplaceholder.typicode.com
+```
 
 ## Start the App Locally
 
 Run the following command in your local terminal to start the app locally.
 
-`yarn start`
+```
+yarn start
+```
 
 After the app is built, it will be hosted at http://localhost:3000/todos-react.
 
