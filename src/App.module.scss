@@ -1,6 +1,9 @@
 @import './scss/main';
 
 .app {
+  height: 100%;
+  overflow: scroll;
+
   &.light {
     background-color: $color-light-primary;
     color: $color-light-secondary;
