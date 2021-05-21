@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 import TodoItem from './TodoItem';
-import { Todo } from '../../constants/types';
+import { Todo } from '../../redux/todos/state';
 import { DisplayType, displayTypes } from './constant';
 import classes from './style.module.scss';
 
