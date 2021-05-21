@@ -13,12 +13,33 @@
     width: 960px;
   }
 
-  .title {
+  .header {
     margin: 0 0 15px;
-    @include font-size-normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    @media #{$tablets-up} {
-      @include font-size-large;
+    .title {
+      margin: 0;
+      @include font-size-normal;
+
+      @media #{$tablets-up} {
+        @include font-size-large;
+      }
+    }
+
+    .select {
+      padding: 5px;
+      width: 80px;
+      border: 1px solid $color-grey;
+      border-radius: 15px;
+      @include font-size-smaller;
+      outline: none;
+      cursor: pointer;
+
+      @media #{$tablets-up} {
+        width: 120px;
+      }
     }
   }
 }
