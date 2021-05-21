@@ -4,11 +4,13 @@ import { createTodoSuccess, failed, ITodosAction, loadTodosSuccess, removeTodoSu
 import { fetchTodos, postTodo } from "../../services/jsonPlaceholderApi";
 import checkSuccessfulStatus from "../../utils/checkSuccessfulStatus";
 
+const limit = 10;
+
 export function loadTodos(userId: number) {
   return async (dispatch: Dispatch<ITodosAction>) => {
     const { status, statusText, data } = await fetchTodos(userId);
 
-    if (checkSuccessfulStatus(status)) dispatch(loadTodosSuccess(data as Array<Todo>));
+    if (checkSuccessfulStatus(status)) dispatch(loadTodosSuccess((data as Array<Todo>).slice(0, limit)));
     else dispatch(failed('LOAD_TODOS_FAILED', statusText));
   };
 }
