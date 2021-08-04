@@ -3,12 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
-import { Theme } from './redux/styles/state';
-import { defaultTheme } from './redux/styles/reducer';
+import ThemeController from './components/ThemeController';
 import { loadTodos } from './redux/todos/thunks';
 import { IRootState } from './redux/store';
 import { userIds } from './constant';
-import { setTheme } from './redux/styles/actions';
 import classes from './App.module.scss';
 
 const App: React.FC = () => {
@@ -23,21 +21,6 @@ const App: React.FC = () => {
 
   const handleSelect: React.ChangeEventHandler<HTMLSelectElement> = (e: ChangeEvent<HTMLSelectElement>) => {
     setUserId(parseInt(e.target.value));
-  };
-
-  const toggleTheme: React.MouseEventHandler<HTMLButtonElement> = () => {
-    let newTheme: Theme;
-    switch (theme) {
-      case 'light':
-        newTheme = 'dark';
-        break;
-      case 'dark':
-        newTheme = 'light';
-        break;
-      default:
-        newTheme = defaultTheme;
-    }
-    dispatch(setTheme(newTheme));
   };
 
   useEffect(() => {
@@ -64,22 +47,10 @@ const App: React.FC = () => {
 
         <TodoList todos={todos} />
 
-        <div className={classes['theme-control']}>
-          <button className={classes.button} onClick={toggleTheme}>
-            <span className={clsx([
-              classes.icon,
-              theme === 'light' && classes.active
-            ])}>🌞</span>
-
-            <span className={clsx([
-              classes.icon,
-              theme === 'dark' && classes.active
-            ])}>🌙</span>
-          </button>
-        </div>
+        <ThemeController theme={theme} />
       </div>
     </div>
   );
-}
+};
 
 export default App;
