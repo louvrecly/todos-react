@@ -39,6 +39,6 @@ const TodoList: React.FC<ITodoListProps> = (props: ITodoListProps) => {
       </ul>
     </div>
   );
-}
+};
 
 export default TodoList;

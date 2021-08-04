@@ -49,7 +49,7 @@ const NewTodo: React.FC<INewTodoProps> = (props: INewTodoProps) => {
         <span className={classes.icon}>+</span>
       </button>
     </div>
-  )
+  );
 };
 
 export default NewTodo;
