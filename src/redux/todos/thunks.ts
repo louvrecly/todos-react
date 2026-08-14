@@ -3,7 +3,7 @@ import { Todo } from "./state";
 import { createTodoSuccess, failed, ITodosAction, loadTodosSuccess, removeTodoSuccess, updateTodoSuccess } from "./actions";
 import { fetchTodos } from "../../services/jsonPlaceholderApi";
 import checkSuccessfulStatus from "../../utils/checkSuccessfulStatus";
-import createUuid from "../../utils/createUuid";
+import createLocalId from "../../utils/createLocalId";
 
 const limit = 10;
 
@@ -17,7 +17,7 @@ export function loadTodos(userId: number) {
 }
 
 export function createTodo(newTodo: Todo) {
-  const id = createUuid();
+  const id = createLocalId();
   return (dispatch: Dispatch<ITodosAction>) => dispatch(createTodoSuccess({ ...newTodo, id }));
   /* Working code - commented out for performance concern since the Json Placeholder API are faked */
   // return async (dispatch: Dispatch<ITodosAction>) => {
